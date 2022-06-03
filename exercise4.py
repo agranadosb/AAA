@@ -88,7 +88,7 @@ if __name__ == "__main__":
     steps = 50
     print(f"Step 0/{steps}: theta0 = ({string_pis(pis)})")
     for i in range(1, 50 + 1):
-        f_means, f_stds, pis = em_step(points, means, stds, pis, .1)
+        f_means, f_stds, pis = em_step(points, means, stds, pis, .0)
         if np.any(np.isnan(pis)) or np.any(pis < 0):
             break
-        print(f"Step {i}/{steps}: theta0 = ({string_pis(pis)})", means, stds)
+        print(f"Step {i}/{steps}: theta0 = ({string_pis(pis)})")

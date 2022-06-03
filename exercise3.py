@@ -158,4 +158,4 @@ if __name__ == "__main__":
     # }
 
     model = MaximumEntropyModel(S, features, lambdas)
-    model.fit(2000)
+    model.fit(10)

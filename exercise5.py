@@ -2,17 +2,15 @@ import os
 
 
 if __name__ == "__main__":
-    n = 5000
+    n = 1000
     instructions = [
         f"scfg-toolkit/genFig -F 0 -c {n} -l 2 -L 14 > DATA/Tr-right-{n}",
         f"scfg-toolkit/genFig -F 1 -c {n} -l 2 -L 14 > DATA/Tr-equil-{n}",
         f"scfg-toolkit/genFig -F 2 -c {n} -l 2 -L 14 > DATA/Tr-isosc-{n}",
-        f"scfg-toolkit/genFig -F 1 -c {int(n / 2)} -l 2 -L 14 > DATA/Tr-right-neg-{n}",
-        f"scfg-toolkit/genFig -F 2 -c {int(n / 2)} -l 2 -L 14 >> DATA/Tr-right-neg-{n}",
+        f"scfg-toolkit/genFig -F 1 -c {n} -l 2 -L 14 > DATA/Tr-right-neg-{n}",
         f"scfg-toolkit/genFig -F 0 -c {int(n / 2)} -l 2 -L 14 > DATA/Tr-equil-neg-{n}",
         f"scfg-toolkit/genFig -F 2 -c {int(n / 2)} -l 2 -L 14 >> DATA/Tr-equil-neg-{n}",
-        f"scfg-toolkit/genFig -F 0 -c {int(n / 2)} -l 2 -L 14 > DATA/Tr-isosc-neg-{n}",
-        f"scfg-toolkit/genFig -F 1 -c {int(n / 2)} -l 2 -L 14 >> DATA/Tr-isosc-neg-{n}",
+        f"scfg-toolkit/genFig -F 1 -c {n} -l 2 -L 14 > DATA/Tr-isosc-neg-{n}",
         f"""scfg-toolkit/scfg_learn_mmi -g MODELS/G-1 -f MODELS/right-0.10 -p DATA/Tr-right-{n} -n DATA/Tr-right-neg-{n} -H 0.1 -i 1""",
         f"""scfg-toolkit/scfg_learn_mmi -g MODELS/G-1 -f MODELS/equil-0.10 -p DATA/Tr-equil-{n} -n DATA/Tr-equil-neg-{n} -H 0.1 -i 1""",
         f"""scfg-toolkit/scfg_learn_mmi -g MODELS/G-1 -f MODELS/isosc-0.10 -p DATA/Tr-isosc-{n} -n DATA/Tr-isosc-neg-{n} -H 0.1 -i 1""",

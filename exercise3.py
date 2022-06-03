@@ -139,7 +139,7 @@ if __name__ == "__main__":
         "C1-a": lambda word, label: 1 if word[0] == "a" and word.count("a") == 1 and label == "C1" else 0,
         "C1-b": lambda word, label: 1 if word[0] == "b" and word.count("b") == 1 and label == "C1" else 0,
         "C2-a": lambda word, label: 1 if word[0] == "a" and label == "C0" else 0,
-        "C2-b": lambda word, label: 1 if word[0] == "a" and label == "C0" else 0,
+        "C2-b": lambda word, label: 1 if word[0] == "b" and label == "C0" else 0,
     }
 
     lambdas = {
